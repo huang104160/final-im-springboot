@@ -1,0 +1,36 @@
+
+spring:
+  datasource:
+    driver-calss-name: com.mysql.cj.jdbc.Drive
+    url: jdbc:mysql://127.0.0.1:3306/im?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password:
+    hikari:
+      pool-name: DateHikariC
+      minimux-idle: 5
+      idel-timeout: 18000
+      maximum-pool-size: 10
+      auto-commit: true
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+jwt:
+  tokenHeader: Authorization
+  secret: eiorjeowijfioewjfdksjfoisd
+  expiration: 1800000
+  tokenHead: Bearer
+#  mybatis 
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+
+# 这里需要和前端的服务器路径一致
+imageBaseUrl:
+  http://127.0.0.1:19000/assets/heads/
+
+
+
+crypto:
+  charset: UTF-8
+  key: 123456
+server:
+  port: 28080
